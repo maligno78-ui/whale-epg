@@ -32,10 +32,11 @@ def get_session():
     if _session is None:
         _session = requests.Session()
         _session.headers.update(HEADERS)
-        # Obtener token
-        resp = _session.get(AUTH_URL, params={"apiToken": API_TOKEN}, timeout=10)
+        device_id = str(uuid.uuid4())
+        resp = _session.get(AUTH_URL, params={"apiToken": API_TOKEN, "uuid": device_id}, timeout=10)
         resp.raise_for_status()
-        token = resp.json()["data"]["accessToken"]
+        data = resp.json()["data"]
+        token = data["subjectToken"]
         _session.headers["Authorization"] = f"Bearer {token}"
         print(f"Token obtenido: {token[:20]}...")
     return _session
@@ -91,14 +92,12 @@ def build_xmltv(channels, epg_data):
     root.set("generator-info-name", "WhaleTV-EPG")
     root.set("generator-info-url", "https://github.com/maligno78-ui/whale-epg")
 
-    # Canales
     for ch in channels.values():
         channel = ET.SubElement(root, "channel", id=ch["id"])
         ET.SubElement(channel, "display-name", lang=ch["lang"]).text = ch["name"]
         if ch["logo"]:
             ET.SubElement(channel, "icon", src=ch["logo"])
 
-    # Programas
     count = 0
     for entry in epg_data:
         chl_id = entry.get("chlId")
@@ -118,17 +117,13 @@ def build_xmltv(channels, epg_data):
     return root
 
 def _fmt_time(ms):
-    """Convierte milisegundos a formato XMLTV."""
     dt = datetime.fromtimestamp(ms / 1000, tz=timezone.utc)
     return dt.strftime("%Y%m%d%H%M%S %z")
 
 def main():
     print("=== Whale TV+ EPG Generator ===\n")
-
-    # 1. Canales
     channels = fetch_channels()
 
-    # 2. EPG
     now = datetime.now(timezone.utc)
     start_ms = int(now.timestamp() * 1000)
     end_ms = int((now + timedelta(days=DAYS)).timestamp() * 1000)
@@ -144,7 +139,6 @@ def main():
         if (i // EPG_BATCH_SIZE + 1) % 5 == 0:
             print(f"  {min(i + EPG_BATCH_SIZE, len(chl_ids))}/{len(chl_ids)} lotes...")
 
-    # 3. XML
     print("Generando XMLTV...")
     root = build_xmltv(channels, epg_data)
 
