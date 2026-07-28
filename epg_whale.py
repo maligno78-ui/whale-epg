@@ -18,6 +18,7 @@ LOGO_BASE = "https://d3b6luslimvglo.cloudfront.net/images/79/rlaxximages/channel
 OUTPUT_FILE = "epg.xml"
 DAYS = 7
 EPG_BATCH_SIZE = 10
+COUNTRIES = ["US", "ES", "MX"]
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -43,34 +44,34 @@ def get_session():
     return _session
 
 def fetch_channels():
+    """Obtiene canales de varios paises y los combina sin duplicados."""
     session = get_session()
-    resp = session.get(CHANNELS_URL, params={
-        "langCode": "en", "countryCode": "US"
-    }, timeout=15)
-    resp.raise_for_status()
-    data = resp.json()
-
     channels = {}
-    seen = set()
-    categories = data.get("data", [])
-    skip = {"All", "Featured all other countries"}
 
-    for cat in categories:
-        cat_name = cat.get("ctgName", cat.get("categoryName", ""))
-        if cat_name in skip:
-            continue
-        ch_list = cat.get("channels", cat.get("channelList", []))
-        for ch in ch_list:
-            chl_id = ch.get("chlId")
-            if chl_id and chl_id not in seen:
-                seen.add(chl_id)
-                channels[chl_id] = {
-                    "id": chl_id,
-                    "name": ch.get("chlName", ""),
-                    "logo": LOGO_BASE.format(ch.get("imageIdentifier", "")),
-                    "lang": (ch.get("chlLangCode", "es") or "es").split("-")[0],
-                }
-    print(f"Canales obtenidos: {len(channels)}")
+    for country in COUNTRIES:
+        resp = session.get(CHANNELS_URL, params={
+            "langCode": "en", "countryCode": country
+        }, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+
+        for cat in data.get("data", []):
+            cat_name = cat.get("ctgName", cat.get("categoryName", ""))
+            if cat_name in ("All", "Featured all other countries"):
+                continue
+            ch_list = cat.get("channels", cat.get("channelList", []))
+            for ch in ch_list:
+                chl_id = ch.get("chlId")
+                if chl_id and chl_id not in channels:
+                    channels[chl_id] = {
+                        "id": chl_id,
+                        "name": ch.get("chlName", ""),
+                        "logo": LOGO_BASE.format(ch.get("imageIdentifier", "")),
+                        "lang": (ch.get("chlLangCode", "es") or "es").split("-")[0],
+                    }
+        print(f"  {country}: {len(channels)} canales acumulados")
+
+    print(f"Total canales: {len(channels)}")
     return channels
 
 def fetch_epg_batch(channel_ids, start_ms, end_ms):
@@ -132,7 +133,7 @@ def main():
     chl_ids = list(channels.keys())
     epg_data = []
 
-    print(f"Descargando EPG ({len(chl_ids)} canales, {DAYS} dias)...")
+    print(f"\nDescargando EPG ({len(chl_ids)} canales, {DAYS} dias)...")
     for i in range(0, len(chl_ids), EPG_BATCH_SIZE):
         batch = chl_ids[i : i + EPG_BATCH_SIZE]
         result = fetch_epg_batch(batch, start_ms, end_ms)
@@ -147,7 +148,6 @@ def main():
     with open(OUTPUT_FILE, "wb") as f:
         f.write(xml_str)
 
-    # Version comprimida gzip
     with open(OUTPUT_FILE, "rb") as f_in:
         with gzip.open(OUTPUT_FILE + ".gz", "wb") as f_out:
             f_out.write(f_in.read())
