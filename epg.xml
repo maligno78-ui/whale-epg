@@ -4971,6 +4971,9 @@
   <programme channel="894117456778889583" start="20260804223049 +0000" stop="20260804231646 +0000">
     <title lang="es">Maury</title>
   </programme>
+  <programme channel="894117456778889583" start="20260804231646 +0000" stop="20260804235956 +0000">
+    <title lang="es">Maury</title>
+  </programme>
   <programme channel="967946649035481273" start="20260728195903 +0000" stop="20260728220830 +0000">
     <title lang="es">Ben and Charlie</title>
   </programme>
@@ -19201,6 +19204,9 @@
     <title lang="es">Best Pets of the Month</title>
   </programme>
   <programme channel="411588003363298938" start="20260804224504 +0000" stop="20260804231704 +0000">
+    <title lang="es">Best Pets of the Month</title>
+  </programme>
+  <programme channel="411588003363298938" start="20260804231704 +0000" stop="20260804234904 +0000">
     <title lang="es">Best Pets of the Month</title>
   </programme>
   <programme channel="411588870569207033" start="20260728222314 +0000" stop="20260728225544 +0000">
@@ -39828,9 +39834,6 @@
   <programme channel="886574565227497107" start="20260801055547 +0000" stop="20260801060017 +0000">
     <title lang="es">5-Minute Crafts</title>
   </programme>
-  <programme channel="972712064533996134" start="20260728222255 +0000" stop="20260728225305 +0000">
-    <title lang="es">123GO!</title>
-  </programme>
   <programme channel="972712064533996134" start="20260728225305 +0000" stop="20260728231733 +0000">
     <title lang="es">123GO!</title>
   </programme>
@@ -41684,9 +41687,6 @@
   </programme>
   <programme channel="522806775813578244" start="20260804230000 +0000" stop="20260804233000 +0000">
     <title lang="es">One World Kitchen</title>
-  </programme>
-  <programme channel="1065522377628650141" start="20260728224357 +0000" stop="20260728230918 +0000">
-    <title lang="es">C’est plus qu’un jardin S03</title>
   </programme>
   <programme channel="1065522377628650141" start="20260728230918 +0000" stop="20260728231658 +0000">
     <title lang="es">Safran &amp; saveurs by chef Simo </title>
