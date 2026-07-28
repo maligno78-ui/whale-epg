@@ -12606,9 +12606,6 @@
   <programme channel="626555045429117070" start="20260804230000 +0000" stop="20260804233000 +0000">
     <title lang="es">Invincible</title>
   </programme>
-  <programme channel="1022125030546936767" start="20260728191757 +0000" stop="20260728214318 +0000">
-    <title lang="es">Spooks Hoods And JFK</title>
-  </programme>
   <programme channel="1022125030546936767" start="20260728214318 +0000" stop="20260728232844 +0000">
     <title lang="es">The Basement</title>
   </programme>
@@ -37868,6 +37865,9 @@
   </programme>
   <programme channel="956148002287389573" start="20260804211914 +0000" stop="20260804232834 +0000">
     <title lang="es">Hit and Miss Tour 2</title>
+  </programme>
+  <programme channel="956148002287389573" start="20260804232834 +0000" stop="20260805004239 +0000">
+    <title lang="es">HaHa Bus</title>
   </programme>
   <programme channel="1022125030546936774" start="20260728231502 +0000" stop="20260728232024 +0000">
     <title lang="es">Swastik Rangoli</title>
