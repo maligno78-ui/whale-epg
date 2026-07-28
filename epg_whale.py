@@ -8,6 +8,7 @@ from xml.dom import minidom
 from datetime import datetime, timedelta, timezone
 import uuid
 import os
+import gzip
 
 API_TOKEN = "4ef13b5f3d2744e3b0a569feb8dde298"
 AUTH_URL = "https://rlaxx.zeasn.tv/livetv/api/v1/auth/access"
@@ -146,8 +147,14 @@ def main():
     with open(OUTPUT_FILE, "wb") as f:
         f.write(xml_str)
 
+    # Version comprimida gzip
+    with open(OUTPUT_FILE, "rb") as f_in:
+        with gzip.open(OUTPUT_FILE + ".gz", "wb") as f_out:
+            f_out.write(f_in.read())
+
     size_mb = os.path.getsize(OUTPUT_FILE) / 1024 / 1024
-    print(f"\nEPG generado: {OUTPUT_FILE} ({size_mb:.1f} MB)")
+    size_gz = os.path.getsize(OUTPUT_FILE + ".gz") / 1024 / 1024
+    print(f"\nEPG generado: {OUTPUT_FILE} ({size_mb:.1f} MB) + .gz ({size_gz:.1f} MB)")
     print("Listo.")
 
 if __name__ == "__main__":
