@@ -2487,9 +2487,6 @@
   <programme channel="1022125030546936761" start="20260730050633 +0000" stop="20260730061543 +0000">
     <title lang="es">Lights of Old Santa Fe</title>
   </programme>
-  <programme channel="894118415936589488" start="20260728214750 +0000" stop="20260728223339 +0000">
-    <title lang="es">Steve Wilkos</title>
-  </programme>
   <programme channel="894118415936589488" start="20260728223339 +0000" stop="20260728232015 +0000">
     <title lang="es">Steve Wilkos</title>
   </programme>
@@ -3162,8 +3159,8 @@
   <programme channel="894118415936589488" start="20260804223513 +0000" stop="20260804232005 +0000">
     <title lang="es">Steve Wilkos</title>
   </programme>
-  <programme channel="894117919729520248" start="20260728215359 +0000" stop="20260728224107 +0000">
-    <title lang="es">Judge Mathis</title>
+  <programme channel="894118415936589488" start="20260804232005 +0000" stop="20260805000404 +0000">
+    <title lang="es">Steve Wilkos</title>
   </programme>
   <programme channel="894117919729520248" start="20260728224107 +0000" stop="20260728232808 +0000">
     <title lang="es">Judge Mathis</title>
@@ -7443,9 +7440,6 @@
   <programme channel="942280082834594513" start="20260804230000 +0000" stop="20260805000000 +0000">
     <title lang="es">Afroland Family</title>
   </programme>
-  <programme channel="979187723418476859" start="20260728201500 +0000" stop="20260728213200 +0000">
-    <title lang="es">Aces And Eights</title>
-  </programme>
   <programme channel="979187723418476859" start="20260728213200 +0000" stop="20260728232300 +0000">
     <title lang="es">Belle Starr</title>
   </programme>
@@ -7769,9 +7763,6 @@
   </programme>
   <programme channel="942280082834594512" start="20260729233000 +0000" stop="20260730013000 +0000">
     <title lang="es">The Stone Drew Ripples</title>
-  </programme>
-  <programme channel="968813239419275714" start="20260728221447 +0000" stop="20260728224729 +0000">
-    <title lang="es">Chicken Girls</title>
   </programme>
   <programme channel="968813239419275714" start="20260728224729 +0000" stop="20260728232346 +0000">
     <title lang="es">Chicken Girls</title>
@@ -9362,9 +9353,6 @@
   </programme>
   <programme channel="989293714931712081" start="20260803031755 +0000" stop="20260803044439 +0000">
     <title lang="es">Captured</title>
-  </programme>
-  <programme channel="584532704499467702" start="20260728200714 +0000" stop="20260728214244 +0000">
-    <title lang="es">El Amarrador Iii</title>
   </programme>
   <programme channel="584532704499467702" start="20260728214244 +0000" stop="20260728232212 +0000">
     <title lang="es">El Corrido Del Bato Loco</title>
@@ -15249,9 +15237,6 @@
   <programme channel="989293714931712080" start="20260804230000 +0000" stop="20260805000000 +0000">
     <title lang="es">Docs &amp; Historias</title>
   </programme>
-  <programme channel="931186243466302957" start="20260728223019 +0000" stop="20260728225618 +0000">
-    <title lang="es">Rescate Urbano de Animales</title>
-  </programme>
   <programme channel="931186243466302957" start="20260728225618 +0000" stop="20260728232218 +0000">
     <title lang="es">Rescate Urbano de Animales</title>
   </programme>
@@ -19209,9 +19194,6 @@
   <programme channel="411588003363298938" start="20260804231704 +0000" stop="20260804234904 +0000">
     <title lang="es">Best Pets of the Month</title>
   </programme>
-  <programme channel="411588870569207033" start="20260728222314 +0000" stop="20260728225544 +0000">
-    <title lang="es">Viral Wild</title>
-  </programme>
   <programme channel="411588870569207033" start="20260728225544 +0000" stop="20260728232544 +0000">
     <title lang="es">Storm Hunters</title>
   </programme>
@@ -20185,6 +20167,9 @@
     <title lang="es">Viral Wild</title>
   </programme>
   <programme channel="411588870569207033" start="20260804224849 +0000" stop="20260804231849 +0000">
+    <title lang="es">Storm Hunters</title>
+  </programme>
+  <programme channel="411588870569207033" start="20260804231849 +0000" stop="20260804234849 +0000">
     <title lang="es">Storm Hunters</title>
   </programme>
   <programme channel="999420644834214638" start="20260728224000 +0000" stop="20260728231000 +0000">
@@ -30075,9 +30060,6 @@
   <programme channel="942280082834594514" start="20260729230000 +0000" stop="20260730013000 +0000">
     <title lang="es">It Could Have Been Me</title>
   </programme>
-  <programme channel="911148153934782542" start="20260728222454 +0000" stop="20260728225454 +0000">
-    <title lang="es">Just For Laughs Gags</title>
-  </programme>
   <programme channel="911148153934782542" start="20260728225454 +0000" stop="20260728232509 +0000">
     <title lang="es">Just For Laughs Gags</title>
   </programme>
@@ -33084,9 +33066,6 @@
   <programme channel="968837716807123413" start="20260730062500 +0000" stop="20260730072800 +0000">
     <title lang="es">Box Playlist - dame dembow que no pare</title>
   </programme>
-  <programme channel="905558162617737047" start="20260728225224 +0000" stop="20260728230724 +0000">
-    <title lang="es">Cheat Meal</title>
-  </programme>
   <programme channel="905558162617737047" start="20260728230724 +0000" stop="20260728232224 +0000">
     <title lang="es">Sorted Food: Game Changers</title>
   </programme>
@@ -34569,9 +34548,6 @@
   <programme channel="925710235225102102" start="20260802233000 +0000" stop="20260803000000 +0000">
     <title lang="es">Fpv Drone Highlights, Episode 5</title>
   </programme>
-  <programme channel="1022125030546936765" start="20260728221819 +0000" stop="20260728225050 +0000">
-    <title lang="es">Escape to Panagia Hozoviotissa, Amorgos</title>
-  </programme>
   <programme channel="1022125030546936765" start="20260728225050 +0000" stop="20260728232322 +0000">
     <title lang="es">The Porto Cathedral, Portugal </title>
   </programme>
@@ -34934,9 +34910,6 @@
   </programme>
   <programme channel="1022125030546936775" start="20260730154236 +0000" stop="20260730161314 +0000">
     <title lang="es">The Giza Pyramid Complex</title>
-  </programme>
-  <programme channel="910027172377794537" start="20260728211854 +0000" stop="20260728222533 +0000">
-    <title lang="es">Road Less Traveled S5 - &quot;Caribbean Special&quot;</title>
   </programme>
   <programme channel="910027172377794537" start="20260728222533 +0000" stop="20260728232206 +0000">
     <title lang="es">Road Less Traveled S5 - &quot;Recap&quot;</title>
@@ -36957,12 +36930,6 @@
   <programme channel="931186243466302967" start="20260802231127 +0000" stop="20260803001215 +0000">
     <title lang="es">Balkan Boom Towns</title>
   </programme>
-  <programme channel="956148002287389573" start="20260728230906 +0000" stop="20260728231512 +0000">
-    <title lang="es">Paws &amp; Heritage</title>
-  </programme>
-  <programme channel="956148002287389573" start="20260728231512 +0000" stop="20260728232135 +0000">
-    <title lang="es">Paws &amp; Heritage</title>
-  </programme>
   <programme channel="956148002287389573" start="20260728232135 +0000" stop="20260728232604 +0000">
     <title lang="es">Paws &amp; Heritage</title>
   </programme>
@@ -37901,9 +37868,6 @@
   </programme>
   <programme channel="956148002287389573" start="20260804211914 +0000" stop="20260804232834 +0000">
     <title lang="es">Hit and Miss Tour 2</title>
-  </programme>
-  <programme channel="1022125030546936774" start="20260728230225 +0000" stop="20260728231502 +0000">
-    <title lang="es">Navratri Print Rangoli</title>
   </programme>
   <programme channel="1022125030546936774" start="20260728231502 +0000" stop="20260728232024 +0000">
     <title lang="es">Swastik Rangoli</title>
@@ -41906,15 +41870,6 @@
   </programme>
   <programme channel="1065522377628650141" start="20260729234826 +0000" stop="20260730002113 +0000">
     <title lang="es">Les Ambassadeurs 2025</title>
-  </programme>
-  <programme channel="956148002287389585" start="20260728231411 +0000" stop="20260728231533 +0000">
-    <title lang="es">Cinnamon Fried Pineapple Recipe</title>
-  </programme>
-  <programme channel="956148002287389585" start="20260728231533 +0000" stop="20260728231849 +0000">
-    <title lang="es">Creamy Patisserie Homemade Thick Custard</title>
-  </programme>
-  <programme channel="956148002287389585" start="20260728231849 +0000" stop="20260728231946 +0000">
-    <title lang="es">Delicious Butternut Custard Pecan Pie</title>
   </programme>
   <programme channel="956148002287389585" start="20260728231946 +0000" stop="20260728232540 +0000">
     <title lang="es">Easter Bunny Butt Cake Recipe</title>
@@ -50283,9 +50238,6 @@
   <programme channel="1022125030546936780" start="20260804230000 +0000" stop="20260805000000 +0000">
     <title lang="es">Xtrem Sports</title>
   </programme>
-  <programme channel="1022125030546936762" start="20260728222325 +0000" stop="20260728225342 +0000">
-    <title lang="es">Doubled Down Outdoors</title>
-  </programme>
   <programme channel="1022125030546936762" start="20260728225342 +0000" stop="20260728232313 +0000">
     <title lang="es">Fatal Impact</title>
   </programme>
@@ -52601,9 +52553,6 @@
   </programme>
   <programme channel="925722884801369615" start="20260729235211 +0000" stop="20260730000144 +0000">
     <title lang="es">Auto Union Type C Silver Arrow</title>
-  </programme>
-  <programme channel="1022125030546936769" start="20260728221951 +0000" stop="20260728225135 +0000">
-    <title lang="es">Shifting Gears</title>
   </programme>
   <programme channel="1022125030546936769" start="20260728225135 +0000" stop="20260728232600 +0000">
     <title lang="es">Australian Outback 4x4 Extreme</title>
@@ -57815,9 +57764,6 @@
   </programme>
   <programme channel="945087649944309085" start="20260804230000 +0000" stop="20260805000000 +0000">
     <title lang="es">TRT World</title>
-  </programme>
-  <programme channel="925715003465143077" start="20260728230000 +0000" stop="20260728231500 +0000">
-    <title lang="es">News</title>
   </programme>
   <programme channel="925715003465143077" start="20260728231500 +0000" stop="20260728232000 +0000">
     <title lang="es">Focus</title>
