@@ -1,0 +1,38 @@
+name: Generar EPG Whale TV+
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repo
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Generar EPG
+        run: python epg_whale.py
+
+      - name: Subir EPG al repo
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add epg.xml
+          git diff --staged --quiet || git commit -m "EPG actualizado $(date +%Y-%m-%d)"
+          git push
