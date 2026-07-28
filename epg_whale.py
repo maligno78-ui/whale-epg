@@ -6,7 +6,6 @@ import requests
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 from datetime import datetime, timedelta, timezone
-import concurrent.futures
 import uuid
 import os
 
@@ -32,19 +31,21 @@ def get_session():
     if _session is None:
         _session = requests.Session()
         _session.headers.update(HEADERS)
-        device_id = str(uuid.uuid4())
-        resp = _session.get(AUTH_URL, params={"apiToken": API_TOKEN, "uuid": device_id}, timeout=10)
+        resp = _session.get(AUTH_URL, params={
+            "apiToken": API_TOKEN, "uuid": "1", "langCode": "en"
+        }, timeout=10)
         resp.raise_for_status()
-        data = resp.json()["data"]
-        token = data["subjectToken"]
-        _session.headers["Authorization"] = f"Bearer {token}"
+        data = resp.json()
+        token = data.get("token") or data.get("data", {}).get("token") or data.get("data", {}).get("subjectToken")
+        _session.headers["token"] = token
         print(f"Token obtenido: {token[:20]}...")
     return _session
 
 def fetch_channels():
-    """Obtiene todos los canales disponibles."""
     session = get_session()
-    resp = session.get(CHANNELS_URL, timeout=15)
+    resp = session.get(CHANNELS_URL, params={
+        "langCode": "en", "countryCode": "US"
+    }, timeout=15)
     resp.raise_for_status()
     data = resp.json()
 
@@ -54,10 +55,11 @@ def fetch_channels():
     skip = {"All", "Featured all other countries"}
 
     for cat in categories:
-        cat_name = cat.get("categoryName", "")
+        cat_name = cat.get("ctgName", cat.get("categoryName", ""))
         if cat_name in skip:
             continue
-        for ch in cat.get("channelList", []):
+        ch_list = cat.get("channels", cat.get("channelList", []))
+        for ch in ch_list:
             chl_id = ch.get("chlId")
             if chl_id and chl_id not in seen:
                 seen.add(chl_id)
@@ -71,7 +73,6 @@ def fetch_channels():
     return channels
 
 def fetch_epg_batch(channel_ids, start_ms, end_ms):
-    """Obtiene EPG para un lote de canales."""
     session = get_session()
     params = {
         "channelIds": ",".join(channel_ids),
@@ -87,7 +88,6 @@ def fetch_epg_batch(channel_ids, start_ms, end_ms):
         return []
 
 def build_xmltv(channels, epg_data):
-    """Construye el XMLTV."""
     root = ET.Element("tv")
     root.set("generator-info-name", "WhaleTV-EPG")
     root.set("generator-info-url", "https://github.com/maligno78-ui/whale-epg")
@@ -117,7 +117,7 @@ def build_xmltv(channels, epg_data):
     return root
 
 def _fmt_time(ms):
-    dt = datetime.fromtimestamp(ms / 1000, tz=timezone.utc)
+    dt = datetime.fromtimestamp(int(ms) / 1000, tz=timezone.utc)
     return dt.strftime("%Y%m%d%H%M%S %z")
 
 def main():
